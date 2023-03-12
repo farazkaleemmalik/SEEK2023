@@ -1,0 +1,9 @@
+Bluetooth Module:
+Tx -> Rx (Arduino)
+
+Left IR Sensor:
+Out -> Pin 2
+
+Right IR Sensor:
+Out -> Pin 3
+
