@@ -148,17 +148,20 @@ void SimpleMapInput(float * ans, float * Input){
     R_speed = abs(0.7 - (((angle-180.0)/90.0)*1.7))*power;
   }
 
+  
+
 
   ans[0] = (L_direction);
   ans[1] = (R_direction);
   ans[2] = (L_speed);
   ans[3] = (R_speed);
+  ans[4] = map(Input[2], 0, 1, 90, 180);
 }
 
 
 
 
-void ExecuteCommand_L298N(float * Command){
+void ExecuteCommand_L298N(float * Command) {
   
   if(Command[0]>0){
     digitalWrite(DIR_L_F, HIGH);
@@ -177,6 +180,21 @@ void ExecuteCommand_L298N(float * Command){
   }
   
   // Next set speed:
-  analogWrite(PWM_L, Command[2]);
-  analogWrite(PWM_R, Command[3]);
+  if (Command[2] > 100) {
+    analogWrite(PWM_L, 200);
+    Serial.print("HIGH ");
+  } else {
+    analogWrite(PWM_L, 0);
+    Serial.print("LOW ");
+  }
+
+  if (Command[3] > 100) {
+    analogWrite(PWM_R, 200);
+    Serial.print("HIGH\n");
+  } else {
+    analogWrite(PWM_R, 0);
+    Serial.print("LOW\n");
+  }
+  //analogWrite((int)PWM_L, Command[2]);
+  //analogWrite((int)PWM_R, Command[3]);
 }

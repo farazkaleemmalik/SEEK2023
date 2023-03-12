@@ -15,8 +15,10 @@ void ExecuteCommand_L298N(float * Command);           //Takes in a 4 element lis
 #define DIR_L_B 12    // Left Direction pin that will indicate backwards movement (1 for backwards, 0 for forewards).
 #define PWM_L 11     // Speed controll pin. *** This pin must be plugged into an output pin on the arduino that is labled PWM ***.
 
-#define DIR_R_F 4     // Right Direction pin that will indicate forewards movement (1 for forewards, 0 for backwards)
-#define DIR_R_B 2     // Left Direction pin that will indicate backwards movement (1 for backwards, 0 for forewards).
-#define PWM_R 3       // Speed controll pin. *** This pin must be plugged into an output pin on the arduino that is labled PWM ***.
+#define DIR_R_F 7     // Right Direction pin that will indicate forewards movement (1 for forewards, 0 for backwards)
+#define DIR_R_B 8     // Left Direction pin that will indicate backwards movement (1 for backwards, 0 for forewards).
+#define PWM_R 9       // Speed controll pin. *** This pin must be plugged into an output pin on the arduino that is labled PWM ***.
+
+#define SCP 6 // Mini servo port
 
 #endif
